@@ -1,0 +1,35 @@
+{
+  "_comment": "Sample configuration for User Group Access Control. Replace YOUR_USERNAME_HERE with your actual Windows username (e.g. nehab).",
+  "groups": [
+    {
+      "id": "admin",
+      "name": "Administrators",
+      "description": "Full access to the Admin folder"
+    },
+    {
+      "id": "user",
+      "name": "Standard Users",
+      "description": "Read-only access to the Public subfolder"
+    }
+  ],
+  "users": [
+    {
+      "_comment": "Replace YOUR_USERNAME_HERE with your actual Windows username",
+      "username": "nehab",
+      "group_id": "user"
+    }
+  ],
+  "permissions": [
+    {
+      "group_id": "admin",
+      "path": "C:\\Users\\nehab\\Documents\\GMU\\740\\Files\\AdminFolder",
+      "allowed_operations": ["READ", "WRITE", "CREATE", "DELETE", "RENAME"]
+    },
+    {
+      "group_id": "user",
+      "path": "C:\\Users\\nehab\\Documents\\GMU\\740\\PublicFolder",
+      "allowed_operations": ["READ", "WRITE", "CREATE"]
+    }
+  ],
+  "log_file_path": "C:\\Users\\nehab\\Documents\\GMU\\740\\Final Project\\access_log.txt"
+}
